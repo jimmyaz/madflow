@@ -52,6 +52,7 @@ const createNewFlow = async (req, res) => {
     })
     .catch(error => {
       console.log('cannot create flow', error);
+      res.status(405).json({ message: error.message });
       res.json({ flow: '' });
     });
 };
